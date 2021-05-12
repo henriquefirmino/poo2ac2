@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.facens.poo.system.dto.AdminInsertDTO;
+
 @Entity
 @Table(name = "TB_ADMIN")
 public class Admin implements Serializable{
@@ -32,5 +34,9 @@ public class Admin implements Serializable{
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public Admin(AdminInsertDTO adminInsertDTO) {
+        this.phoneNumber = adminInsertDTO.getPhoneNumber();
     }
 }
