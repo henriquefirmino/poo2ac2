@@ -46,7 +46,7 @@ public class EventController {
         PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
 
         Page<EventDTO> list = service.getEvents(pageRequest, name.trim(), description.trim(), place.trim(),
-                emailContact.trim(), startDate);
+                emailContact.trim(), startDate, null, linesPerPage, linesPerPage, linesPerPage);
 
         return ResponseEntity.ok().body(list);
     }
