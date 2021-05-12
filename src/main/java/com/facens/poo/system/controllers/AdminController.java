@@ -8,6 +8,7 @@ import com.facens.poo.system.services.AdminService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,6 +33,12 @@ public class AdminController {
     @PostMapping
     public ResponseEntity<AdminDTO> insert(@RequestBody AdminInsertDTO insertDTO) {
         AdminDTO dto = service.insertAdmin(insertDTO);
-        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(dto.getId()).toUri());
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(dto.getId()).toUri();
+    }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<Void> delete(@PathVariable Lond id) {
+        service.deleteAdmin(id);
+        return ResponseEntity.noContent().build();
     }
 }
