@@ -1,5 +1,6 @@
 package com.facens.poo.system.controllers;
 
+import com.facens.poo.system.dto.AdminDTO;
 import com.facens.poo.system.services.AdminService;
 
 import org.springframework.beans.factory.annotation.Autowired;

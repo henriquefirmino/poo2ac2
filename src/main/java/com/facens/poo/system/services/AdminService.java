@@ -22,5 +22,9 @@ public class AdminService {
         Admin admin = op.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Admin not found by id"));
         return new AdminDTO(admin);
     }
+
+    public AdminDTO getAdminById(Long id) {
+        return null;
+    }
     
 }
