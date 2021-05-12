@@ -1,6 +1,7 @@
 package com.facens.poo.system.services;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Optional;
 import javax.persistence.EntityNotFoundException;
 import com.facens.poo.system.dto.EventDTO;
@@ -23,8 +24,8 @@ public class EventService {
     private EventRepository repository;
 
     public Page<EventDTO> getEvents(PageRequest pageRequest, String name, String description, String place,
-            String emailContact, LocalDate startDate) {
-        Page<Event> list = repository.find(pageRequest, name, description, place, emailContact, startDate);
+            String emailContact, LocalDate startDate, LocalTime startTime, long amountFreeTickets, long amountPayedTickets, double priceTicket) {
+        Page<Event> list = repository.find(pageRequest, name, description, place, emailContact, startDate, startTime, amountFreeTickets, amountPayedTickets, priceTicket);
         return list.map(e -> new EventDTO(e));
     }
 
