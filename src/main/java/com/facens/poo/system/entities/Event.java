@@ -35,6 +35,30 @@ public class Event implements Serializable {
     private long amountPayedTickets;
     private double priceTicket;
 
+    public long getAmountFreeTickets() {
+        return amountFreeTickets;
+    }
+
+    public void setAmountFreeTickets(long amountFreeTickets) {
+        this.amountFreeTickets = amountFreeTickets;
+    }
+
+    public long getAmountPayedTickets() {
+        return amountPayedTickets;
+    }
+
+    public void setAmountPayedTickets(long amountPayedTickets) {
+        this.amountPayedTickets = amountPayedTickets;
+    }
+
+    public double getPriceTicket() {
+        return priceTicket;
+    }
+
+    public void setPriceTicket(double priceTicket) {
+        this.priceTicket = priceTicket;
+    }
+
     public Event() {
 
     }

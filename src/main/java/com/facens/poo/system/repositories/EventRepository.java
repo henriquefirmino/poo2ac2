@@ -2,6 +2,8 @@ package com.facens.poo.system.repositories;
 
 
 import java.time.LocalDate;
+import java.time.LocalTime;
+
 import com.facens.poo.system.entities.Event;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -18,14 +20,20 @@ public interface EventRepository extends JpaRepository <Event,Long> {
            " LOWER(e.description)        LIKE   LOWER(CONCAT('%', :description, '%')) AND " +
            " LOWER(e.place)              LIKE   LOWER(CONCAT('%', :place, '%')) AND " +
            " e.startDate                  >     :startDate                       AND " +
-           " LOWER(e.emailContact)      LIKE   LOWER(CONCAT('%', :emailContact, '%'))")
+           " LOWER(e.emailContact)      LIKE   LOWER(CONCAT('%', :emailContact, '%')) AND " +
+           "e.startTime                   >     :startTime                       AND " +
+           "")
 
         public Page<Event> find(Pageable pageRequest, 
                                 String name,
                                 String description,
                                 String place,
                                 String emailContact,
-                                LocalDate startDate
+                                LocalDate startDate,
+                                LocalTime startTime,
+                                long amountFreeTickets,
+                                long amountPayedTickets,
+                                double priceTicket
                                 );
 
 }
