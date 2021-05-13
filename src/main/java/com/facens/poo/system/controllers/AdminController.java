@@ -4,6 +4,7 @@ import java.net.URI;
 
 import com.facens.poo.system.dto.AdminDTO;
 import com.facens.poo.system.dto.AdminInsertDTO;
+import com.facens.poo.system.dto.AdminUpdateDTO;
 import com.facens.poo.system.services.AdminService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,10 +36,11 @@ public class AdminController {
     public ResponseEntity<AdminDTO> insert(@RequestBody AdminInsertDTO insertDTO) {
         AdminDTO dto = service.insertAdmin(insertDTO);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(dto.getId()).toUri();
+        return ResponseEntity.created(uri).body(dto);
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<Void> delete(@PathVariable Lond id) {
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
         service.deleteAdmin(id);
         return ResponseEntity.noContent().build();
     }
