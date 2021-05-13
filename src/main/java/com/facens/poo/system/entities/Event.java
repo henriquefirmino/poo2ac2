@@ -32,7 +32,9 @@ public class Event implements Serializable {
     private LocalTime endTime;
     private String emailContact;
     private long amountFreeTickets;
+    private long amountFreeTicketsSold;
     private long amountPayedTickets;
+    private long amountPayedTicketsSold;
     private double priceTicket;
 
     public long getAmountFreeTickets() {
@@ -72,6 +74,10 @@ public class Event implements Serializable {
         this.startTime = eventInsertDTO.getStartTime();
         this.endTime = eventInsertDTO.getEndTime();
         this.emailContact = eventInsertDTO.getEmailContact();
+        this.amountFreeTickets = eventInsertDTO.getAmountFreeTickets();
+        this.amountFreeTicketsSold = eventInsertDTO.getAmountFreeTicketsSold();
+        this.amountPayedTickets = eventInsertDTO.getAmountPayedTickets();
+        this.amountPayedTicketsSold = eventInsertDTO.getAmountPayedTicketsSold();
     }
 
     public static long getSerialversionuid() {
@@ -150,6 +156,23 @@ public class Event implements Serializable {
         this.emailContact = emailContact;
     }
 
+
+    
+    public long getAmountFreeTicketsSold() {
+        return amountFreeTicketsSold;
+    }
+
+    public void setAmountFreeTicketsSold(long amountFreeTicketsSold) {
+        this.amountFreeTicketsSold = amountFreeTicketsSold;
+    }
+
+    public long getAmountPayedTicketsSold() {
+        return amountPayedTicketsSold;
+    }
+
+    public void setAmountPayedTicketsSold(long amountPayedTicketsSold) {
+        this.amountPayedTicketsSold = amountPayedTicketsSold;
+    }
 
     @Override
     public int hashCode() {

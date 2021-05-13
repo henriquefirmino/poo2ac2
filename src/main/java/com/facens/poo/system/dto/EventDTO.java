@@ -45,6 +45,22 @@ public class EventDTO {
         setStartTime(event.getStartTime());
         setEndTime(event.getEndTime());
         setEmailContact(event.getEmailContact());
+        setAmountFreeTickets(event.getAmountFreeTickets());
+        setAmountFreeTicketsSold(event.getAmountFreeTicketsSold());
+        setAmountPayedTickets(event.getAmountPayedTickets());
+        setAmountPayedTicketsSold(event.getAmountPayedTicketsSold());
+    }
+
+    private void setAmountFreeTicketsSold(long amountFreeTicketsSold) {
+    }
+
+    private void setAmountPayedTickets(long amountPayedTickets) {
+    }
+
+    private void setAmountPayedTicketsSold(long amountPayedTicketsSold) {
+    }
+
+    private void setAmountFreeTickets(long amountFreeTickets) {
     }
 
     public Long getId() {
