@@ -63,4 +63,16 @@ public class EventInsertDTO {
     public void setEmailContact(String emailContact) {
         this.emailContact = emailContact;
     }
+    public long getAmountFreeTickets() {
+        return 0;
+    }
+    public long getAmountFreeTicketsSold() {
+        return 0;
+    }
+    public long getAmountPayedTickets() {
+        return 0;
+    }
+    public long getAmountPayedTicketsSold() {
+        return 0;
+    }
 }
