@@ -9,5 +9,9 @@ public class AdminRepository {
     public Optional<Admin> findById(Long id) {
         return null;
     }
+
+    public Admin save(Admin entity) {
+        return null;
+    }
     
 }
