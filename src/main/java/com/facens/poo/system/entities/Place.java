@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.facens.poo.system.dto.PlaceInsertDTO;
+
 @Entity
 @Table(name = "TB_PLACE")
 public class Place implements Serializable{
@@ -19,6 +21,11 @@ public class Place implements Serializable{
     private String name;
     private String address;
     
+    public Place(PlaceInsertDTO placeInsertDTO) {
+        this.name = placeInsertDTO.getName();
+        this.address = placeInsertDTO.getAddress();        
+    }
+
     public long getId() {
         return id;
     }

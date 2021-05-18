@@ -4,6 +4,8 @@ import java.net.URI;
 
 import com.facens.poo.system.dto.PlaceDTO;
 import com.facens.poo.system.dto.PlaceInsertDTO;
+import com.facens.poo.system.dto.PlaceUpdateDTO;
+import com.facens.poo.system.services.PlaceService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +22,9 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 @RestController
 @RequestMapping("/places")
 public class PlaceController {
+
+    @Autowired
+    private PlaceService service;
 
     @GetMapping("{id}")
     public ResponseEntity<PlaceDTO> getPlaceById(@PathVariable Long id) {

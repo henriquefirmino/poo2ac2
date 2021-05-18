@@ -8,5 +8,9 @@ public class PlaceRepository {
     public Optional<Place> findById(Long id) {
         return null;
     }
+
+    public Place save(Place entity) {
+        return null;
+    }
     
 }
