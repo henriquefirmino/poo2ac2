@@ -3,6 +3,7 @@ package com.facens.poo.system.controllers;
 import java.net.URI;
 
 import com.facens.poo.system.dto.PlaceDTO;
+import com.facens.poo.system.dto.PlaceInsertDTO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
