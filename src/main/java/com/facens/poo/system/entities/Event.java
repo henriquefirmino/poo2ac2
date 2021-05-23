@@ -21,9 +21,9 @@ public class Event implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long id_event;
 
-    private String name;
+    private String nameEvent;
     private String description;
     private String place;
     private LocalDate startDate;
@@ -67,7 +67,7 @@ public class Event implements Serializable {
 
     public Event(EventInsertDTO eventInsertDTO) {
         this.description = eventInsertDTO.getDescription();
-        this.name = eventInsertDTO.getName();
+        this.nameEvent = eventInsertDTO.getName();
         this.place = eventInsertDTO.getPlace();
         this.startDate = eventInsertDTO.getStartDate();
         this.endDate = eventInsertDTO.getEndDate();
@@ -85,19 +85,19 @@ public class Event implements Serializable {
     }
 
     public long getId() {
-        return id;
+        return id_event;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setId(long id_event) {
+        this.id_event = id_event;
     }
 
     public String getName() {
-        return name;
+        return nameEvent;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String nameEvent) {
+        this.nameEvent = nameEvent;
     }
 
     public String getDescription() {
@@ -178,7 +178,7 @@ public class Event implements Serializable {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + (int) (id ^ (id >>> 32));
+        result = prime * result + (int) (id_event ^ (id_event >>> 32));
         return result;
     }
 
@@ -191,7 +191,7 @@ public class Event implements Serializable {
         if (getClass() != obj.getClass())
             return false;
         Event other = (Event) obj;
-        if (id != other.id)
+        if (id_event != other.id_event)
             return false;
         return true;
     }
